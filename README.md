@@ -8,12 +8,22 @@ These skills wrap the SurgeGraph product into focused workflows your Claude Code
 
 ## Install
 
+Inside Claude Code:
+
 ```
 /plugin marketplace add surgegraph/surgegraph-skills
 /plugin install surgegraph@surgegraph-skills
 ```
 
 Update later with `/plugin marketplace update`.
+
+Or, via [`npx skills`](https://github.com/vercel-labs/skills) (works for Cursor, Codex, and 50+ other agents too):
+
+```
+npx skills add surgegraph/surgegraph-skills
+```
+
+Update later with `npx skills update`.
 
 ## What's included
 
