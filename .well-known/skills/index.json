@@ -9,162 +9,162 @@
 			"name": "surge-setup-aeo-tracking",
 			"description": "End-to-end onboarding for SurgeGraph AI Visibility tracking \u2014 create a project, pick topics, generate tracking prompts, and apply tracking in bulk.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-setup-aeo-tracking/SKILL.md",
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-setup-aeo-tracking/references/aeo-concepts.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-setup-aeo-tracking/SKILL.md",
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-setup-aeo-tracking/references/aeo-concepts.md"
 			]
 		},
 		{
 			"name": "surge-weekly-visibility-review",
 			"description": "Produce a structured AI Visibility review for a SurgeGraph project \u2014 week-over-week deltas, sentiment shifts, top citing domains, gainers and losers per prompt, and emerging topics.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-weekly-visibility-review/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-weekly-visibility-review/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-publish-to-wordpress",
 			"description": "Publish a SurgeGraph Writer document to a connected WordPress site \u2014 pick the document, verify the CMS integration, choose categories and an author, then send.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-publish-to-wordpress/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-publish-to-wordpress/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-optimize-content",
 			"description": "Take an existing article and produce concrete AEO improvement recommendations grounded in SurgeGraph's response-structure, citation, and topic-gap data \u2014 then optionally generate an optimized version.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-optimize-content/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-optimize-content/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-opportunities-to-content",
 			"description": "Turn SurgeGraph AI Visibility opportunities into a content production plan \u2014 pick the highest-value gaps, generate Writer documents seeded with the context, and optionally publish to WordPress.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-opportunities-to-content/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-opportunities-to-content/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-competitor-citation-analysis",
 			"description": "Identify where competitors win AI citations the user doesn't \u2014 by tracked prompt, by topic, by citing domain \u2014 with concrete evidence and prioritized actions.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-competitor-citation-analysis/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-competitor-citation-analysis/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-emerging-topics-monitor",
 			"description": "Surface new topics AI search engines are increasingly answering questions about in the user's space \u2014 topics not yet tracked, ranked by mention volume and adjacency.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-emerging-topics-monitor/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-emerging-topics-monitor/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-topic-research-to-article",
 			"description": "Research a topic deeply with SurgeGraph topic research, then turn the research into a Writer article \u2014 outline, sub-topics, entities, and intent clusters all flow into the brief.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-topic-research-to-article/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-topic-research-to-article/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-knowledge-library-bootstrap",
 			"description": "Create a SurgeGraph knowledge library and ingest a set of source documents so the Writer can ground future articles in real brand context instead of generic prose.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-knowledge-library-bootstrap/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-knowledge-library-bootstrap/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-generate-image",
 			"description": "Generate brand-aligned images for an article using the project's Content Vision settings \u2014 brand palette, style, composition preferences are applied automatically.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-generate-image/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-generate-image/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-page-citability-score",
 			"description": "Score a page or SurgeGraph document on AI-search extractability across five dimensions, with concrete rewrite suggestions per content block.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-page-citability-score/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-page-citability-score/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-engine-optimizer",
 			"description": "Per-AI-engine optimization audit \u2014 diagnose why a brand is under-cited on ChatGPT vs. Google AI Overviews vs. Perplexity vs. Gemini vs. Bing Copilot, and produce platform-specific fixes.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-engine-optimizer/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-engine-optimizer/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-ai-crawler-audit",
 			"description": "Audit a site's robots.txt for blocked AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and more) and produce a corrected robots.txt.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-ai-crawler-audit/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-ai-crawler-audit/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-brand-authority-scan",
 			"description": "Audit a brand's third-party platform presence \u2014 Wikipedia, Wikidata, and (planned) Reddit, YouTube, LinkedIn \u2014 to find authority gaps that affect AI search citation.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-brand-authority-scan/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-brand-authority-scan/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-llmstxt-builder",
 			"description": "Generate or validate an llms.txt file for a domain \u2014 the emerging standard that gives AI systems a structured summary of a site's content, key pages, and business facts.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-llmstxt-builder/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-llmstxt-builder/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-multi-client-portfolio-rollup",
 			"description": "Aggregate AI Visibility metrics across all projects in an organization for an agency portfolio view \u2014 one row per client, ranked by movement, sentiment, and citation share.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-multi-client-portfolio-rollup/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-multi-client-portfolio-rollup/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-citation-momentum-tracker",
 			"description": "Identify external URLs (own pages and competitor pages) gaining or losing AI engine citations week-over-week \u2014 the page-level rising-and-falling view.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-citation-momentum-tracker/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-citation-momentum-tracker/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-cross-client-anomaly-detector",
 			"description": "Across all projects in an organization, surface only the clients with statistically notable changes (gainers, losers, sentiment shifts, volatility spikes) \u2014 pre-filtered Monday-morning triage for agencies.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-cross-client-anomaly-detector/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-cross-client-anomaly-detector/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-optimize-for-chatgpt",
 			"description": "Deep-dive optimization for getting cited specifically on ChatGPT \u2014 Wikipedia/Wikidata strategy, Bing index coverage, Reddit presence, comprehensive-article framing, and entity grounding.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-optimize-for-chatgpt/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-optimize-for-chatgpt/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-optimize-for-aio",
 			"description": "Deep-dive optimization for Google AI Overviews (AIO) \u2014 organic top-10 ranking, question-based headings, direct answers, tables, FAQ structure, and featured-snippet overlap.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-optimize-for-aio/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-optimize-for-aio/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-optimize-for-perplexity",
 			"description": "Deep-dive optimization for Perplexity AI \u2014 Reddit and forum presence, content freshness, original-data positioning, quotable-passage structure, and YouTube transcripts.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-optimize-for-perplexity/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-optimize-for-perplexity/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-optimize-for-gemini",
 			"description": "Deep-dive optimization for Google Gemini \u2014 Knowledge Panel claiming, Google Business Profile, YouTube strategy, Schema.org markup, and Google ecosystem integrations.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-optimize-for-gemini/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-optimize-for-gemini/SKILL.md"
 			]
 		},
 		{
 			"name": "surge-optimize-for-bing-copilot",
 			"description": "Deep-dive optimization for Bing Copilot \u2014 Bing Webmaster Tools, IndexNow protocol for instant indexing, LinkedIn presence, GitHub for tech brands, and Microsoft ecosystem.",
 			"files": [
-				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/skills/surge-optimize-for-bing-copilot/SKILL.md"
+				"https://raw.githubusercontent.com/surgegraph/surgegraph-skills/main/plugins/surgegraph/skills/surge-optimize-for-bing-copilot/SKILL.md"
 			]
 		}
 	]

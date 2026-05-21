@@ -16,7 +16,7 @@
 			"homepage": "https://github.com/surgegraph/surgegraph-skills",
 			"category": "productivity",
 			"tags": ["aeo", "geo", "ai-search", "ai-visibility", "content", "seo"],
-			"source": ".",
+			"source": "./plugins/surgegraph",
 			"version": "0.1.0"
 		}
 	]
