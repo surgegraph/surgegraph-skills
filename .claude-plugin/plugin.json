@@ -1,0 +1,11 @@
+{
+	"name": "surgegraph",
+	"version": "0.1.0",
+	"description": "SurgeGraph workflows for AI Visibility tracking, content production, GEO foundations, and agency operations. 23 skills covering setup, monitoring, content production, diagnostics, competitor analysis, and multi-client portfolio work across ChatGPT, Google AI Overviews, Perplexity, Gemini, and Bing Copilot.",
+	"author": {
+		"name": "SurgeGraph",
+		"url": "https://surgegraph.io"
+	},
+	"homepage": "https://github.com/surgegraph/surgegraph-skills",
+	"license": "Apache-2.0"
+}
