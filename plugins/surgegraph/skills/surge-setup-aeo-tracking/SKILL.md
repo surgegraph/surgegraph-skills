@@ -27,6 +27,7 @@ Steps 1 and 3 are async; the skill polls until each completes before proceeding.
 8. List the generated prompts.
 9. With the user (or "track top M per topic" default), pick which prompts to enable.
 10. Apply tracking in bulk.
+11. Activate tracking — always pass `schedule` and `engines` (use defaults if the user didn't state a preference). Dispatches the first run.
 
 ## Workflow
 
@@ -101,6 +102,49 @@ Default for "no preference stated": top 10 prompts per topic.
 Pass an array of `{ promptId, isTracking: true }` pairs to the bulk tracking update tool. The update is atomic — all updates apply or none do.
 
 Confirm to the user the total count enabled, grouped by topic.
+
+### 11. Activate tracking
+
+Call `activate_ai_visibility_tracking` with `projectId`, `schedule`, and `engines`. This single call configures **and** activates:
+
+- Marks the project as activated (sets the `tracking_activated` flag — without this, the in-app UI keeps showing the "set up tracking" CTA).
+- Dispatches the **first tracking run immediately** across all `isTracking: true` prompts on every enabled engine.
+- Schedules the next run using the provided cadence.
+
+**Both `schedule` and `engines` are required.** If the user didn't state a preference, pass these defaults verbatim:
+
+```jsonc
+{
+  "schedule": {
+    "interval": 1,
+    "intervalUnit": "day",
+    "time": "09:00",
+    "timezone": "America/New_York"
+  },
+  "engines": [
+    { "modelId": "chatgpt", "isEnabled": true },
+    { "modelId": "google-ai-overview", "isEnabled": true },
+    { "modelId": "google-ai-mode", "isEnabled": true },
+    { "modelId": "gemini", "isEnabled": true },
+    { "modelId": "perplexity", "isEnabled": false }
+  ]
+}
+```
+
+Activation always implies `active: true` — there's no way to set up a paused project via this tool. If the user wants to pause after setup, call `update_ai_visibility_schedule` separately.
+
+If the user *did* state a preference (e.g. *"weekly on Mondays at 6am UTC"*, *"only ChatGPT and Perplexity"*, *"don't track Bing Copilot"*), overlay it onto the defaults. For weekly schedules add `daysOfWeek: [1]` (0=Sun … 6=Sat); for monthly add `daysOfMonth: [1]`.
+
+The tool returns one of:
+
+- `alreadyActive: true` — tracking was already activated; no new run was dispatched and any provided `schedule` / `engines` were **ignored**. If the user wanted config changes, call `update_ai_visibility_schedule` or `update_ai_visibility_engines` separately.
+- `dispatched: true` — first run was queued. Report `promptCount`, `engineCount`, and `nextRunAt` to the user.
+- `dispatched: false` (with `alreadyActive: false`) — activation flag was set but no run fired. Surface the returned `message` — usually means no prompts have `isTracking: true`, no engines are enabled, or the org is out of credits/plan access.
+
+**Plan-gated errors** (returned as `{ error, blockedEngines? }` with no side effects):
+
+- `blockedEngines: [...]` present → at least one engine in the `engines` arg isn't granted by the plan. Tell the user which engines were blocked and ask whether to (a) retry without those engines (or omit the `engines` arg to use defaults), or (b) pause setup until they upgrade.
+- Schedule message *"...plan can run tracking at most every X days..."* → the requested cadence is faster than the plan allows. Ask the user for a less-frequent cadence, or omit the `schedule` arg to use defaults.
 
 ## Decisions
 
