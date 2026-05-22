@@ -126,7 +126,7 @@ Call `activate_ai_visibility_tracking` with `projectId`, `schedule`, and `engine
     { "modelId": "google-ai-overview", "isEnabled": true },
     { "modelId": "google-ai-mode", "isEnabled": true },
     { "modelId": "gemini", "isEnabled": true },
-    { "modelId": "perplexity", "isEnabled": false }
+    { "modelId": "perplexity", "isEnabled": true }
   ]
 }
 ```
