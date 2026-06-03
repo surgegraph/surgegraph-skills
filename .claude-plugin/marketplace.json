@@ -1,23 +1,23 @@
 {
-	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-	"name": "surgegraph-skills",
-	"owner": {
-		"name": "SurgeGraph",
-		"url": "https://surgegraph.io"
-	},
-	"plugins": [
-		{
-			"name": "surgegraph",
-			"description": "SurgeGraph workflows for AI Visibility tracking, content production, GEO foundations, and agency operations. 23 skills covering setup, monitoring, content production, diagnostics, competitor analysis, and multi-client portfolio work across ChatGPT, Google AI Overviews, Perplexity, Gemini, and Bing Copilot.",
-			"author": {
-				"name": "SurgeGraph",
-				"url": "https://surgegraph.io"
-			},
-			"homepage": "https://github.com/surgegraph/surgegraph-skills",
-			"category": "productivity",
-			"tags": ["aeo", "geo", "ai-search", "ai-visibility", "content", "seo"],
-			"source": "./plugins/surgegraph",
-			"version": "0.1.0"
-		}
-	]
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "surgegraph-skills",
+  "owner": {
+    "name": "SurgeGraph",
+    "url": "https://surgegraph.io"
+  },
+  "plugins": [
+    {
+      "name": "surgegraph",
+      "description": "SurgeGraph workflows for AI Visibility tracking, content production, GEO foundations, and agency operations. 25 skills covering setup, monitoring, content production, diagnostics, competitor analysis, and multi-client portfolio work across ChatGPT, Google AI Overviews, Perplexity, Gemini, and Bing Copilot.",
+      "author": {
+        "name": "SurgeGraph",
+        "url": "https://surgegraph.io"
+      },
+      "homepage": "https://github.com/surgegraph/surgegraph-skills",
+      "category": "productivity",
+      "tags": ["aeo", "geo", "ai-search", "ai-visibility", "content", "seo"],
+      "source": "./plugins/surgegraph",
+      "version": "0.1.0"
+    }
+  ]
 }
