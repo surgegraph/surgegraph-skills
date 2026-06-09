@@ -77,14 +77,14 @@ Return the document ID and a preview of the outline. Don't auto-publish — the 
 
 ## Decisions
 
-| Situation | What to do |
-|---|---|
-| Topic name is too broad ("marketing," "SaaS") | Surface this — research will return generic results. Ask the user to narrow ("marketing automation for SMBs," "SaaS pricing strategy"). |
-| Topic name overlaps with an AEO topic the user already tracks | Mention the overlap. Suggest they may also want to run [[surge-optimize-content]] after publishing, since they'll have tracking data for related prompts. |
-| User wants article in a language other than English | Confirm the project's language code matches. Topic research output is language-aware. Writer output follows the project's language. |
-| Project has no knowledge library | Generation will work but quality is generic. Strongly suggest [[surge-knowledge-library-bootstrap]] before generating, especially for long-form. |
-| User wants multiple articles from one research run | Use [[surge-opportunities-to-content]] for bulk generation, OR run this skill once per article. Don't try to multiplex in this skill — briefs should be article-specific. |
-| Expansion would push the run past credit budget | Surface the credit cost and let the user decide. Expansion is optional. |
+| Situation                                                     | What to do                                                                                                                                                                |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Topic name is too broad ("marketing," "SaaS")                 | Surface this — research will return generic results. Ask the user to narrow ("marketing automation for SMBs," "SaaS pricing strategy").                                   |
+| Topic name overlaps with an AEO topic the user already tracks | Mention the overlap. Suggest they may also want to run [[surge-optimize-content]] after publishing, since they'll have tracking data for related prompts.                 |
+| User wants article in a language other than English           | Confirm the project's language code matches. Topic research output is language-aware. Writer output follows the project's language.                                       |
+| Project has no knowledge library                              | Generation will work but quality is generic. Strongly suggest [[surge-knowledge-library-bootstrap]] before generating, especially for long-form.                          |
+| User wants multiple articles from one research run            | Use [[surge-opportunities-to-content]] for bulk generation, OR run this skill once per article. Don't try to multiplex in this skill — briefs should be article-specific. |
+| Expansion would push the run past credit budget               | Surface the credit cost and let the user decide. Expansion is optional.                                                                                                   |
 
 ## Common Issues
 
@@ -99,4 +99,4 @@ Return the document ID and a preview of the outline. Don't auto-publish — the 
 - [[surge-knowledge-library-bootstrap]] — strongly recommended before generating long-form articles.
 - [[surge-opportunities-to-content]] — analytics-driven counterpart for bulk article production.
 - [[surge-optimize-content]] — improve the article post-publication after a refresh cycle of tracking data.
-- [[surge-publish-to-wordpress]] — ship the generated article to a connected WordPress site.
+- [[surge-publish-to-cms]] — ship the generated article to the connected CMS.

@@ -1,20 +1,20 @@
 ---
 name: surge-author-setup
-description: Create a SurgeGraph author (a per-project writer persona) and synthesize their voice from real writing samples, so the Writer attributes content to a consistent byline and writes in that person's voice. Use this skill whenever the user wants to set up an author or writer persona, give the Writer a specific voice, make content "sound like" a named person, synthesize an author's tone from their existing articles, onboard a byline for a client, attribute content to a particular author, or link a WordPress author for publishing — even if they don't say "author synthesis." Pairs with [[surge-brand-setup]] (project-level brand profile) and [[surge-setup-aeo-tracking]] (project creation).
+description: Create a SurgeGraph author (a per-project writer persona) and synthesize their voice from real writing samples, so the Writer attributes content to a consistent byline and writes in that person's voice. Use this skill whenever the user wants to set up an author or writer persona, give the Writer a specific voice, make content "sound like" a named person, synthesize an author's tone from their existing articles, onboard a byline for a client, attribute content to a particular author, or set up the byline their CMS shows when publishing (linking a WordPress author, or naming the author shown on Shopify articles) — even if they don't say "author synthesis." Pairs with [[surge-brand-setup]] (project-level brand profile) and [[surge-setup-aeo-tracking]] (project creation).
 ---
 
 # Set up an author with a synthesized voice
 
 An author (Author Synthesis) is a **per-project writer persona**: a name, bio, voice calibration, worldview, and a corpus of representative writing that the Writer uses to produce content in a consistent voice. A project can have several authors (one per byline).
 
-This skill creates an author and synthesizes their voice from real writing samples, optionally linking them to a WordPress author for publishing attribution. It replaces the in-app flow of hand-creating an author and pasting samples one screen at a time.
+This skill creates an author and synthesizes their voice from real writing samples, optionally setting up the byline used when publishing to the project's CMS. It replaces the in-app flow of hand-creating an author and pasting samples one screen at a time.
 
 Voice synthesis is one async-ish, LLM-backed step: it crawls the sample URLs, analyzes them, and writes back a bio, a three-axis voice calibration, a worldview summary, and up to 20 corpus fragments. It is **quota-gated** (counts against the project's author-synthesis allowance) and **destructive on re-run** (a second synthesis overwrites the prior bio, voice, and corpus).
 
 ## Quick Start
 
 1. Confirm the project ID and the author's display name.
-2. (Optional) pick a WordPress author to link for the publishing byline.
+2. (Optional) set up the publishing byline for the project's CMS.
 3. Create the author.
 4. Collect writing samples — public URLs and/or pasted text.
 5. Run voice synthesis.
@@ -29,13 +29,15 @@ Ask the user for:
 - **Project ID** — the author is scoped to one project. If no project exists yet, set one up first via [[surge-setup-aeo-tracking]].
 - **Author name** — the display name (e.g. "Jane Doe").
 - **Bio** — optional; synthesis will generate one, so a manual bio is only needed if the user wants to pin it.
-- **CMS link?** — whether this author should map to a WordPress author so published content carries that byline.
+- **Publishing byline?** — whether published content should carry this author's byline on the project's CMS. How that works depends on the platform (next step).
 
-### 2. (Optional) resolve the WordPress author
+### 2. (Optional) set up the publishing byline
 
-If the user wants a publishing byline, list the authors on their connected WordPress site and let them pick. Capture that author's `id`, `name`, `slug`, `bio`, and `avatarUrl`.
+How the byline works depends on which CMS the project publishes to:
 
-These are stored as a **snapshot** on the SurgeGraph author — the link is not resolved later from the id alone, so the fields must be passed together as a set. (If the user isn't publishing to WordPress, skip this entirely.)
+- **WordPress** — bylines are WordPress user accounts, so the SurgeGraph author must be **linked** to one. List the authors on the connected WordPress site (via the integration's publish options) and let the user pick. Capture that author's `id`, `name`, `slug`, `bio`, and `avatarUrl` — these are stored as a **snapshot** on the SurgeGraph author with `cmsType: "wordpress"`. The link is not resolved later from the id alone, so the fields must be passed together as a set.
+- **Shopify** — there is nothing to link. Shopify article authors are plain names, and at publish time the article byline uses the SurgeGraph author's **name** directly. If consistency with the store matters, check the author names already used on the store (via the integration's publish options) and name the SurgeGraph author to match.
+- **No CMS / publishing manually** — skip this entirely.
 
 ### 3. Create the author
 
@@ -80,6 +82,7 @@ Show the user the synthesized result: the bio, the three voice-calibration value
 | User wants to re-run synthesis on an existing author | Allowed, but warn first: it **overwrites** the existing bio, voice, and corpus, and consumes another synthesis from the quota.                                                                               |
 | Voice calibration is slightly off after synthesis    | Update the author's calibration directly. Don't re-synthesize just to nudge one axis.                                                                                                                        |
 | Linking a WordPress author                           | Source the snapshot (id, name, slug, bio, avatarUrl) from the connected WordPress site and pass them together with `cmsType: "wordpress"`. The SurgeGraph author name then tracks the WordPress author name. |
+| Project publishes to Shopify                         | Don't link anything — there is nothing to link. Name the SurgeGraph author exactly as the byline should appear on the store; that name is used at publish time.                                              |
 | User only wants a byline, no voice work              | Create the author (optionally CMS-linked) and stop — synthesis is optional. The author will use a neutral default voice.                                                                                     |
 | Author-synthesis quota reached                       | Surface the exact quota message from the tool. Suggest removing an unused author or upgrading.                                                                                                               |
 
@@ -89,11 +92,11 @@ Show the user the synthesized result: the bio, the three voice-calibration value
 - **A sample URL returns 403** — the source site blocks automated fetches. Paste that article's text directly.
 - **Author stuck in `analyzing`** — a synthesis run failed partway. The status reverts to `pending`; just run synthesis again with the same or better samples.
 - **`Insufficient permission`** — the user's role doesn't allow updating authors. They need a role with author-management access from an org owner or manager.
-- **Published content shows the wrong byline** — the author isn't CMS-linked, or is linked to the wrong WordPress author. Re-link with the correct WordPress author snapshot.
+- **Published content shows the wrong byline** — on WordPress: the author isn't CMS-linked, or is linked to the wrong WordPress author; re-link with the correct snapshot. On Shopify: the byline is the SurgeGraph author's name (or "Admin" if the document has no author); rename the author or assign one to the document.
 
 ## References
 
 - [[surge-brand-setup]] — the **project-level** brand profile (identity values, mandatory/prohibited vocabulary, target audience) that complements each author's individual voice.
 - [[surge-setup-aeo-tracking]] — create the project first if one doesn't exist.
 - [[surge-knowledge-library-bootstrap]] — give the Writer grounding context to pair with the author's voice.
-- [[surge-publish-to-wordpress]] — publish content under the linked author's byline.
+- [[surge-publish-to-cms]] — publish content under the linked author's byline.

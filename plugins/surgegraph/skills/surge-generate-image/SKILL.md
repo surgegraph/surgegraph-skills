@@ -71,14 +71,14 @@ Don't iterate silently — surface the variations and ask the user which to keep
 
 ## Decisions
 
-| Situation | What to do |
-|---|---|
-| Content Vision settings not configured | Generation works but won't be brand-aligned. Strongly suggest configuring settings via the dashboard. Don't proceed with multi-image batches without settings — wasted credits. |
-| User wants images for an entire article | A hero + 2-3 section illustrations is the standard set. Don't generate one image per section unless the user asks — over-imagery hurts readability. |
-| User wants a logo or brand mark | Image generation is for editorial imagery, not logo design. Surface this; suggest the user use dedicated logo tools. |
-| Aspect ratio for use case | Hero: 16:9 or 21:9. Social card: 1.91:1 (Open Graph) or 1:1 (Instagram). Section illustration: 4:3 or 16:9. Thumbnail: 1:1. |
-| User wants human faces | Check Content Vision restrictions first — many brands explicitly avoid faces. If unrestricted, surface that AI-generated faces can be uncanny and slow consideration; consider style="illustration" to soften. |
-| User mentions a competitor's image style | Don't replicate. Surface the request, ask the user to describe the style in their own terms (which goes into Content Vision settings going forward). |
+| Situation                                | What to do                                                                                                                                                                                                     |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Content Vision settings not configured   | Generation works but won't be brand-aligned. Strongly suggest configuring settings via the dashboard. Don't proceed with multi-image batches without settings — wasted credits.                                |
+| User wants images for an entire article  | A hero + 2-3 section illustrations is the standard set. Don't generate one image per section unless the user asks — over-imagery hurts readability.                                                            |
+| User wants a logo or brand mark          | Image generation is for editorial imagery, not logo design. Surface this; suggest the user use dedicated logo tools.                                                                                           |
+| Aspect ratio for use case                | Hero: 16:9 or 21:9. Social card: 1.91:1 (Open Graph) or 1:1 (Instagram). Section illustration: 4:3 or 16:9. Thumbnail: 1:1.                                                                                    |
+| User wants human faces                   | Check Content Vision restrictions first — many brands explicitly avoid faces. If unrestricted, surface that AI-generated faces can be uncanny and slow consideration; consider style="illustration" to soften. |
+| User mentions a competitor's image style | Don't replicate. Surface the request, ask the user to describe the style in their own terms (which goes into Content Vision settings going forward).                                                           |
 
 ## Common Issues
 
@@ -92,4 +92,4 @@ Don't iterate silently — surface the variations and ask the user which to keep
 
 - [[surge-topic-research-to-article]] — natural upstream skill that produces an article needing imagery.
 - [[surge-opportunities-to-content]] — bulk article generation that often needs accompanying imagery.
-- [[surge-publish-to-wordpress]] — final step where the generated image is attached to the post.
+- [[surge-publish-to-cms]] — final step where the generated image is attached to the post.

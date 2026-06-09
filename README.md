@@ -50,7 +50,7 @@ Update later with `npx skills update`.
 - `surge-opportunities-to-content` — turn citation gaps into a content plan
 - `surge-optimize-content` — AEO improvement recommendations for existing articles
 - `surge-generate-image` — brand-aligned imagery for articles
-- `surge-publish-to-wordpress` — push Writer docs to WordPress
+- `surge-publish-to-cms` — push Writer docs to the connected CMS (WordPress, Shopify)
 
 ### Diagnostics & analysis
 

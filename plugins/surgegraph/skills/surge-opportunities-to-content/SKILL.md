@@ -16,7 +16,7 @@ This is the canonical analytics → production workflow.
 3. With the user (or via a "top N" default), pick which opportunities to act on.
 4. For each picked opportunity, derive a content brief from its context.
 5. Bulk-generate Writer documents.
-6. Optionally publish via [[surge-publish-to-wordpress]].
+6. Optionally publish via [[surge-publish-to-cms]].
 
 ## CLI shortcut (faster path)
 
@@ -76,18 +76,18 @@ Bulk generation is async on the backend. Confirm to the user how many were queue
 
 ### 5. Optional: publish
 
-If the user wants the articles to go live, chain into [[surge-publish-to-wordpress]] one document at a time. Default publish status: `draft`. Live publication should always be an explicit user opt-in.
+If the user wants the articles to go live, chain into [[surge-publish-to-cms]] one document at a time. Default publish status: `draft`. Live publication should always be an explicit user opt-in.
 
 ## Decisions
 
-| Situation | What to do |
-|---|---|
-| No opportunities returned | The project may be new (need ≥2 refresh cycles to surface opportunities), or it may already be performing well. Check refresh cadence and refresh history before suggesting either explanation. |
-| User says "do them all" | Cap at 10 by default. Bulk generation consumes Writer credits — surface that and confirm. |
-| Opportunity is about brand mentions, not content | Some opportunities are "the brand is mentioned on Reddit but not on the user's site" — these aren't writeable as Writer documents. Filter these out and tell the user; they need a different play (a brand-authority effort, not content). |
-| User wants to act on opportunities across multiple projects | Run this skill once per project. There's no portfolio-level opportunities action today. |
-| Knowledge library should be attached but the project doesn't have one | Skip the attachment; flag in the output that grounding could improve quality. Suggest creating a knowledge library if the user has authoritative source content. |
-| Writer credit quota nearly exhausted | Surface the quota state before queueing bulk generation. Don't queue more than the user has budget for. |
+| Situation                                                             | What to do                                                                                                                                                                                                                                 |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| No opportunities returned                                             | The project may be new (need ≥2 refresh cycles to surface opportunities), or it may already be performing well. Check refresh cadence and refresh history before suggesting either explanation.                                            |
+| User says "do them all"                                               | Cap at 10 by default. Bulk generation consumes Writer credits — surface that and confirm.                                                                                                                                                  |
+| Opportunity is about brand mentions, not content                      | Some opportunities are "the brand is mentioned on Reddit but not on the user's site" — these aren't writeable as Writer documents. Filter these out and tell the user; they need a different play (a brand-authority effort, not content). |
+| User wants to act on opportunities across multiple projects           | Run this skill once per project. There's no portfolio-level opportunities action today.                                                                                                                                                    |
+| Knowledge library should be attached but the project doesn't have one | Skip the attachment; flag in the output that grounding could improve quality. Suggest creating a knowledge library if the user has authoritative source content.                                                                           |
+| Writer credit quota nearly exhausted                                  | Surface the quota state before queueing bulk generation. Don't queue more than the user has budget for.                                                                                                                                    |
 
 ## Common Issues
 
@@ -101,5 +101,5 @@ If the user wants the articles to go live, chain into [[surge-publish-to-wordpre
 
 - [[surge-setup-aeo-tracking]] — prerequisite (tracking history needed for opportunities to surface).
 - [[surge-weekly-visibility-review]] — surfaces gaps that motivate using this skill.
-- [[surge-publish-to-wordpress]] — final step when articles are ready to ship live.
-- [[surge-optimize-content]] — adjacent skill for *existing* articles vs. this skill for *new* articles.
+- [[surge-publish-to-cms]] — final step when articles are ready to ship live.
+- [[surge-optimize-content]] — adjacent skill for _existing_ articles vs. this skill for _new_ articles.
